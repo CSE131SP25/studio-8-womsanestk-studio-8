@@ -1,8 +1,14 @@
 package studio8;
 
 import support.cse131.NotYetImplementedException;
+import java.util.Scanner;
+
 
 public class Question {
+	
+	private String prompt;
+	private String answer;
+	private int points;
 	
 	/**
 	 * Constructor
@@ -11,7 +17,11 @@ public class Question {
 	 * @param points
 	 */
 	public Question(String prompt, String answer, int points) {
-		throw new NotYetImplementedException();
+		//throw new NotYetImplementedException();
+		this.prompt = prompt;
+		this.answer = answer;
+		this.points = points;
+		
 	}
 	
 	/**
@@ -40,7 +50,7 @@ public class Question {
 	 * @return int points
 	 */
 	public int getPoints() {
-		throw new NotYetImplementedException();
+		return points;
 	}
 	
 	/**
@@ -48,10 +58,15 @@ public class Question {
 	 * @return String answer
 	 */
 	public String getAnswer() {
-		throw new NotYetImplementedException();
+		return answer;
 	}
 	
 	public static void main(String[] args) {
 		// TODO: Create a Question object of your own!
+		Scanner in = new Scanner(System.in);
+		Question q = new Question("what is a good question", "i dont know?", 20);
+		q.displayPrompt();
+		String givenAnswer = in.next();
+		q.checkAnswer(givenAnswer);
 	}
 }
